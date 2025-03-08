@@ -1,12 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<style>
-    .img-thumbnail{
-        background-color: #997d87 !important;
-    }
-</style>
-@section('section')
+
 <section class="content">
     <div class="container-fluid">
         <div class="row">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Models\Jobcategories;
+use App\Models\Subject;
 
 class JobCategoryController extends Controller
 {

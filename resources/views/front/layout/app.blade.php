@@ -249,11 +249,11 @@
                         <div class="address_box" id="location_box">
                             <div class="row location_cont">
                                 <div class="col-md-2 col-2 pr-0"><span><i class="fa fa-map-marker" aria-hidden="true"></i></span></div>
-                                <div class="col-md-10 col-10 pl-0"><p class="mb-0 pl-0"></p></div>
+                                <div class="col-md-10 col-10 pl-0"><p class="mb-0 pl-0">{{$settings[6]->content}}</p></div>
                             </div>
-                            <p class="mb-1 contact_box"><span><i class="fa fa-phone" aria-hidden="true"></i></span> <a href=""></a></p>
-                            <p class="mb-1 contact_box"><span><i class="fa fa-envelope" aria-hidden="true"></i></span> <a href=""></a></p>
-                            <p class="mb-1 contact_box"><span><i class="fa fa-globe" aria-hidden="true"></i></span> <a href=""></a></p>
+                            <p class="mb-1 contact_box"><span><i class="fa fa-phone" aria-hidden="true"></i></span> <a href="Tel:{{ $settings[0]->content }}">{{ $settings[0]->content }}</a></p>
+                            <p class="mb-1 contact_box"><span><i class="fa fa-envelope" aria-hidden="true"></i></span> <a href="mailto:{{ $settings[2]->content }}">{{ $settings[2]->content }}</a></p>
+                            <p class="mb-1 contact_box"><span><i class="fa fa-globe" aria-hidden="true"></i></span> <a href="mailto:{{ $settings[8]->content }}">{{ $settings[8]->content }}</a></p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 mt-lg-0 mt-md-4 mt-4">

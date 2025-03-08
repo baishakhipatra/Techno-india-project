@@ -15,6 +15,7 @@ use App\Http\Controllers\JobApplicationController;
 use App\Http\Controllers\TeachingController;
 use App\Http\Controllers\SeoController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\FacultyController;
 
 
 Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('admin.dashboard');
@@ -162,6 +163,31 @@ Route::prefix('master-module')->group(function(){
         Route::get('/delete/{id}', [DepartmentController::class, 'ChooseUsDelete'])->name('choose_us.delete');
         Route::get('/status/{id}', [DepartmentController::class, 'ChooseUsStatus'])->name('choose_us.status');
     });
+
+    Route::prefix('gallery')->group(function(){
+        Route::get('/', [DepartmentController::class, 'galleryIndex'])->name('gallery.list.all');
+        Route::get('/create', [DepartmentController::class, 'galleryCreate'])->name('gallery.create');
+        Route::post('/store', [DepartmentController::class, 'galleryStore'])->name('gallery.store');
+        Route::get('/edit/{id}', [DepartmentController::class, 'galleryEdit'])->name('gallery.edit');
+        Route::post('/update', [DepartmentController::class, 'galleryUpdate'])->name('gallery.update');
+        Route::get('/delete/{id}', [DepartmentController::class, 'galleryDelete'])->name('gallery.delete');
+    });
+
+    Route::prefix('faculty')->group(function(){
+        Route::get('/',[FacultyController::class, 'facultyIndex'])->name('faculty.list.all');
+        Route::get('/create',[FacultyController::class, 'facultyCreate'])->name('faculty.create');
+        Route::post('/store',[FacultyController::class, 'facultyStore'])->name('faculty.store');
+        Route::get('/edit/{id}',[FacultyController::class, 'facultyEdit'])->name('faculty.edit');
+        Route::post('/update',[FacultyController::class, 'facultyUpdate'])->name('faculty.update');
+        Route::get('/delete/{id}',[FacultyController::class, 'facultyDelete'])->name('faculty.delete');
+        Route::get('/status/{id}',[FacultyController::class, 'facultyStatus'])->name('faculty.status');
+    });
+
+});
+
+Route::prefix('settings')->group(function(){
+    Route::get('/',[DepartmentController::class, 'settings'])->name('settings.content');
+    Route::post('/setting/update',[DepartmentController::class, 'settingUpdate'])->name('settings.update');
 });
 
 

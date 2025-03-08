@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarrierController;
 use App\Http\Controllers\IndexController;
 
+use Illuminate\Support\Facades\Auth;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +28,11 @@ Route::prefix('career')->group(function(){
  Route::get('/extra-curricular',[IndexController::class, 'extra_curricular'])->name('extra-curricular.index');
 
  Route::get('/teaching-process',[IndexController::class, 'teaching_process'])->name('teaching-process.index');
+
+
+ Route::get('/why-choose-us',[IndexController::class, 'why_choose_us'])->name('why-choose-us.index');
+
+ Route::get('/faculty',[IndexController::class, 'faculty'])->name('faculty.index');
 
 
 
